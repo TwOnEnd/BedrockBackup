@@ -24,17 +24,17 @@
 
 ### 1. 文件结构
 
-```js
+```
 MCSL-T/
 ├── .backups/                # 备份存档存放目录
 │   ├── full/                # 全备份 存放目录
 │   ├── differential/        # 差异备份 存放目录
 │   ├── rollback_temp_path/  # 回滚前临时备份 存放目录
 │   ├── startup_temp_path/   # 启动前临时备份 存放目录
-│   └── log/                 # BedrockBackup 操作日志记录
+│   └── logs/                 # 备份插件操作日志记录
 │
 ├── .dll/ # 插件目录
-|   ├── BedrockBackup/                  # 备份插件目录
+│   └── BedrockBackup/                  # 备份插件目录
 │   	├── BedrockBackup.dll           # 备份插件
 │   	└── BedrockBackup_Config.json   # 配置文件
 │
@@ -54,7 +54,7 @@ MCSL-T/
 
 ### 备份策略 (`backup_strategy`)
 
-```json
+```
 {
   "current_backup_type": "Full",  // Full（全量）或 Differential（差异）
   "auto_backup": {
@@ -72,7 +72,7 @@ MCSL-T/
 
 ### 自动清理 (`auto_cleanup`)
 
-```json
+```
 {
   "enabled": true,                        // 启动清理
   "cleanup_mode": "ByAge",                // 清理模式（ByAge/ByCount等）
@@ -83,7 +83,7 @@ MCSL-T/
 
 ### 安全管理 (`safety_config`)
 
-```json
+```
 {
   "startup_safety": {
     "keep_startup_backups": true,     // 服务器启动前自动备份
@@ -99,7 +99,7 @@ MCSL-T/
 
 ### 系统限制 (`system_limits`)
 
-```json
+```
 {
   "minimum_required_disk_space_gb": 30 // 创建备份时磁盘至少所需空间 (GB)
 }
